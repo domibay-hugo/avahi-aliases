@@ -25,11 +25,11 @@ Requires:       python-avahi python-daemon
 %description
 Simple python application that manages the announcement of multiple avahi aliases
 
-For installation see README
+For usage instructions see README
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{project_name}
 
 
 %build
