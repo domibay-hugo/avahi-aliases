@@ -41,6 +41,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_exec_prefix}/local/bin/
 mkdir -p %{buildroot}%{_sysconfdir}/
 mkdir -p %{buildroot}%{_docdir}/%{name}
+mkdir -p %{buildroot}%{_unitdir}/
 
 mv README %{buildroot}%{_docdir}/%{name}/
 mv LICENSE %{buildroot}%{_docdir}/%{name}/
@@ -50,7 +51,7 @@ mv avahi_aliases/etc/avahi %{buildroot}/etc/
 mv avahi_aliases/etc/init %{buildroot}/etc/
 mv avahi_aliases/bin/* %{buildroot}%{_exec_prefix}/local/bin/
 
-cp etc/%{project_name}.service %{buildroot}%{_unitdir}/%{project_name}.service
+cp etc/systemd/%{project_name}.service %{buildroot}%{_unitdir}/%{project_name}.service
 
 rm -f %{buildroot}%{_docdir}/%{name}/*.pyc
 rm -f %{buildroot}%{_docdir}/%{name}/*.pyo
@@ -76,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/setup.py*
 %{_exec_prefix}/local/bin/avahi-alias
-%{buildroot}%{_unitdir}/%{project_name}.service
+%{_unitdir}/%{project_name}.service
 %{_sysconfdir}/init/%{project_name}.conf
 %config(noreplace) %{_sysconfdir}/avahi/aliases
 %config(noreplace) %{_sysconfdir}/avahi/aliases.d

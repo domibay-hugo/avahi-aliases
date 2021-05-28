@@ -3,7 +3,7 @@ Description=Avahi Aliases - Management of local hostnames
 Wants=network.target
 After=dbus.service
 After=avahi.service
-Documentation=README
+Documentation=file:///usr/share/doc/python-avahi-aliases/README
 
 [Service]
 ExecStart=/usr/local/bin/avahi-alias start
