@@ -79,4 +79,4 @@ rm -rf $RPM_BUILD_ROOT
 %{buildroot}%{_unitdir}/%{project_name}.service
 %{_sysconfdir}/init/%{project_name}.conf
 %config(noreplace) %{_sysconfdir}/avahi/aliases
-%{_sysconfdir}/avahi/aliases.d
+%config(noreplace) %{_sysconfdir}/avahi/aliases.d
