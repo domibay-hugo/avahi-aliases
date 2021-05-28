@@ -1,0 +1,13 @@
+[Unit]
+Description=Avahi Aliases - Management of local hostnames
+Wants=network.target
+After=dbus.service
+After=avahi.service
+Documentation=README
+
+[Service]
+ExecStart=/usr/local/bin/avahi-alias start
+ExecStop=/usr/local/bin/avahi-alias stop
+
+[Install]
+WantedBy=multi-user.target
